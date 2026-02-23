@@ -1,4 +1,6 @@
 using RESTWithASPNET10.Configurations;
+using RESTWithASPNET10.Repositories;
+using RESTWithASPNET10.Repositories.Impl;
 using RESTWithASPNET10.Service;
 using RESTWithASPNET10.Service.Impl;
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton<CalculatorService>();
 builder.Services.AddScoped<IPersonServices, PersonServicesImpl>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
 
