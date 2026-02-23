@@ -1,4 +1,6 @@
+using RESTWithASPNET10.Configurations;
 using RESTWithASPNET10.Service;
+using RESTWithASPNET10.Service.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<CalculatorService>();
+builder.Services.AddScoped<IPersonServices, PersonServicesImpl>();
+
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
