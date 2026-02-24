@@ -15,7 +15,7 @@ builder.Services.AddScoped<IPersonServices, PersonServicesImpl>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
-
+builder.Services.AddEvolveConfiguration(builder.Configuration, builder.Environment);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
